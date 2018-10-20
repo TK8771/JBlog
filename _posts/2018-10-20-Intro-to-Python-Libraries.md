@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "An Introduction to SQL"
-date: 2018-10-16
+date: 2018-10-20
 excerpt: "A walkthrough of beginner-level SQL."
 tags:
 - SQL
