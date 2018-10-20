@@ -1,6 +1,11 @@
-
-# Project 2 Code
-
+---
+layout: post
+title: "Ames Housing Project"
+date: 2018-09-18
+excerpt: "What factors are most predictive of the price of a house in Ames Iowa?"
+project: true
+tags: [project, regression, regularization, interaction terms]
+---
 
 ```python
 # imports that I'll use over the course of the project
@@ -1561,9 +1566,9 @@ y_train.fillna(value=0, inplace=True)
 # y_test.fillna(value=0, inplace=True)
 ```
 
-    /anaconda3/lib/python3.6/site-packages/pandas/core/frame.py:3787: SettingWithCopyWarning: 
+    /anaconda3/lib/python3.6/site-packages/pandas/core/frame.py:3787: SettingWithCopyWarning:
     A value is trying to be set on a copy of a slice from a DataFrame
-    
+
     See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
       downcast=downcast, **kwargs)
 
