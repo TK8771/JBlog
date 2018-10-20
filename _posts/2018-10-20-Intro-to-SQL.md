@@ -16,7 +16,7 @@ Structured Query Language (aka SQL) is a low-level programming language primaril
 
 Specifically, it was built atop the research of Edgar Codd while he was at IBM's San Jose Research Laboratory. Despite this introduction, this post will not delve into the history of relational database management systems (aka RDBMS). However, Mr. Codd's work is the foundation of how database management systems work, and is the essential cornerstone of how *almost* all data is contained and stored in today's technology-driven world. I highly recommend doing some cursory reading on it here: ["Relational database management system"](https://en.wikipedia.org/wiki/Relational_database_management_system).
 
-The main purpose of this post is to breakdown the basics of an SQL statement for learning purposes.
+The main purpose of this post is to breakdown the basics of an SQL statement for pedagogical purposes.
 
 ## Introduction to Key Concepts
 
