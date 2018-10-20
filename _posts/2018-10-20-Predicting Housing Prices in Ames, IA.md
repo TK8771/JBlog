@@ -5,6 +5,7 @@ date: 2018-09-18
 excerpt: "What factors are most predictive of the price of a house in Ames Iowa?"
 project: true
 tags: [project, regression, regularization, interaction terms]
+image: "/assets/img/iowa_house.jpg"
 ---
 
 ```python
@@ -1566,14 +1567,6 @@ y_train.fillna(value=0, inplace=True)
 # y_test.fillna(value=0, inplace=True)
 ```
 
-    /anaconda3/lib/python3.6/site-packages/pandas/core/frame.py:3787: SettingWithCopyWarning:
-    A value is trying to be set on a copy of a slice from a DataFrame
-
-    See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
-      downcast=downcast, **kwargs)
-
-
-
 ```python
 L = Lasso(alpha = 2.5, max_iter=10000, random_state = 42)
 ```
@@ -1656,7 +1649,7 @@ accuracy = r2_score(y, predictions)
 
 
 
-![png](/images/Project_2_Code_files/Project_2_Code_52_1.png)
+![IOWA]({{"/assets/img/P2_plot.png"}})
 
 
 
