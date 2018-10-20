@@ -1,3 +1,12 @@
+---
+layout: post
+title: "Classifying Reddit Posts: r/DataScience vs r/Statistics"
+date: 2018-09-30
+excerpt: "How can I use NLP to reclassify posts under their correct subreddit?"
+project: true
+tags: [project, NLP, classification, NLTK]
+image: "/assets/img/snoo.png"
+---
 
 # Using Reddit's API for Predicting Comments
 
@@ -7,13 +16,13 @@ As we discussed in week 2, and earlier today, there are two components to starti
 
 For this article, your problem statement will be: _What characteristics of a post on Reddit contribute most to what subreddit it belongs to?_
 
-Your method for acquiring the data will be scraping threads from at least two subreddits. 
+Your method for acquiring the data will be scraping threads from at least two subreddits.
 
 Once you've got the data, you will build a classification model that, using Natural Language Processing and any other relevant features, predicts which subreddit a given post belongs to.
 
 ### Scraping Thread Info from Reddit.com
 
-#### Set up a request (using requests) to the URL below. 
+#### Set up a request (using requests) to the URL below.
 
 *NOTE*: Reddit will throw a [429 error](https://httpstatuses.com/429) when using the following code:
 ```python
@@ -91,7 +100,7 @@ top_stats = sub_stats.top(time_filter='year')
 
 
 ```python
-# These were used and attempted (to success) before creating the loop 
+# These were used and attempted (to success) before creating the loop
 # Request the JSON files
 # I did them in seperate cells to space out the scrapping, so reddit wouldn't throw a 429 error
 # res_ds = res.get(URL_ds, headers={'User-agent': 'TK Bot 0.1'})
@@ -107,7 +116,7 @@ top_stats = sub_stats.top(time_filter='year')
 # res_stats.status_code
 ```
 
-#### Use `res.json()` to convert the response into a dictionary format and set this to a variable. 
+#### Use `res.json()` to convert the response into a dictionary format and set this to a variable.
 
 ```python
 data = res.json()
@@ -115,7 +124,7 @@ data = res.json()
 
 
 ```python
-# These were used and attempted (to success) before creating the loop 
+# These were used and attempted (to success) before creating the loop
 # Convert the JSON responses
 # data_ds = res_ds.json()
 # data_stats = res_stats.json()
@@ -131,7 +140,7 @@ data = res.json()
 
 ```python
 # Testing adding nested dictionaries to each other
-# doubling_up = data_ds['data']['children'] + data_ds['data']['children'] 
+# doubling_up = data_ds['data']['children'] + data_ds['data']['children']
 # doubling_up
 ```
 
@@ -146,7 +155,7 @@ print(len(data['data']['children']))
 If you want more, you'll need to do two things:
 1. Get the name of the last post: `data['data']['after']`
 2. Use that name to hit the following url: `http://www.reddit.com/r/boardgames.json?after=THE_AFTER_FROM_STEP_1`
-3. Create a loop to repeat steps 1 and 2 until you have a sufficient number of posts. 
+3. Create a loop to repeat steps 1 and 2 until you have a sufficient number of posts.
 
 *NOTE*: Reddit will limit the number of requests per second you're allowed to make. When you create your loop, be sure to add the following after each iteration.
 
@@ -181,19 +190,19 @@ for i in range(40):
 
     # Request get
     res = requests.get(url_ds+next_get, headers={'User-agent': 'TK Bot 0.1'})
-    
+
     # Convert the JSON
     new_dict = res.json()
-    
+
     # Add to already collected data set
     data_ds.extend(new_dict['data']['children'])
-    
+
     # Collect 'after' from new dict to generate next URL
     new_url_end = str(new_dict['data']['after'])
-    
+
     # Generate the next URL
     next_get = '?after='+new_url_end
-    
+
     # CSV add/update along with DF creation
     # Chose greater than 0 so the else executes on the first iteration
     if i > 0:
@@ -201,16 +210,16 @@ for i in range(40):
         # Establish current DF - left over from previous way of running
         # past_posts = pd.read_csv('data_ds.csv')
         # current_df = pd.DataFrame(data_ds)
-        
+
         # Append new and old
         total = pd.DataFrame(data_ds)
-        
+
         # Convert to DF and save to new csv file
         pd.DataFrame(total).to_csv('data_ds.csv', index = False)
-    
+
     else:
         pd.DataFrame(data_ds).to_csv('data_ds.csv', index = False)
-        
+
     # Sleep to fit within Reddit's pull limit
     time.sleep(3)
 ```
@@ -228,19 +237,19 @@ for i in range(40):
 
     # Request get
     res = requests.get(url_stats+next_get, headers={'User-agent': 'TK Bot 0.1'})
-    
+
     # Convert the JSON
     new_dict = res.json()
-    
+
     # Add to already collected data set
     data_stats.extend(new_dict['data']['children'])
-    
+
     # Collect 'after' from new dict to generate next URL
     new_url_end = str(new_dict['data']['after'])
-    
+
     # Generate the next URL
     next_get = '?after='+new_url_end
-    
+
     # CSV add/update along with DF creation
     # Chose greater than 0 so the else executes on the first iteration
     if i > 0:
@@ -248,16 +257,16 @@ for i in range(40):
         # Establish current DF - left over from previous way of running
         # past_posts = pd.read_csv('data_stats.csv')
         # current_df = pd.DataFrame(data_stats)
-        
+
         # Append new and old
         total = pd.DataFrame(data_stats)
-        
+
         # Convert to DF and save to new csv file
         pd.DataFrame(total).to_csv('data_stats.csv', index = False)
-    
+
     else:
         pd.DataFrame(data_stats).to_csv('data_stats.csv', index = False)
-        
+
     # Sleep to fit within Reddit's pull limit
     time.sleep(3)
 ```
@@ -270,10 +279,10 @@ for i in range(40):
 # for i in range(25):
 #     # Get the name of the last post
 #     last_post_ds = data_ds['data']['after']
-    
+
 #     # Set the url from the last post
 #     new_url_ds = "https://www.reddit.com/r/datascience.json?after=" + last_post_ds
-    
+
 #     # Perform request get
 #     new_res_ds = res.get(new_url_ds, headers={'User-agent': 'TK Bot 0.1'})
 
@@ -284,7 +293,7 @@ for i in range(40):
 #     data_ds.update(new_data_ds)
 #     data_ds['data']['children'] = data_ds['data']['children'] + new_data_ds['data']['children']
 #     data_ds['data']['after'] = new_data_ds['data']['after']
-    
+
 #     # Sleep
 #     # time.sleep(3)
 ```
@@ -309,7 +318,7 @@ for i in range(40):
 
 ```python
 # Testing adding nested dictionaries to each other
-# doubling_up = data_ds['data']['children'] + data_ds['data']['children'] 
+# doubling_up = data_ds['data']['children'] + data_ds['data']['children']
 # doubling_up
 ```
 
@@ -1584,8 +1593,8 @@ dfCombined.to_csv('Combined.csv', index = False)
 
 #### Use `CountVectorizer` or `TfidfVectorizer` from scikit-learn to create features from the thread titles and descriptions (NOTE: Not all threads have a description)
 - Examine using count or binary features in the model
-- Re-evaluate your models using these. Does this improve the model performance? 
-- What text features are the most valuable? 
+- Re-evaluate your models using these. Does this improve the model performance?
+- What text features are the most valuable?
 
 # N-grams = 1
 
@@ -1627,7 +1636,7 @@ X_test_transform = cvec.transform(X_test)
 
 
 ```python
-df_view_stats = pd.DataFrame(X_test_transform.todense(), 
+df_view_stats = pd.DataFrame(X_test_transform.todense(),
                              columns=cvec.get_feature_names(),
                              index=y_test.index)
 df_view_stats.head()
@@ -2537,7 +2546,7 @@ X_test_transform2 = cvec2.transform(X_test2)
 
 
 ```python
-df_view_stats2 = pd.DataFrame(X_test_transform2.todense(), 
+df_view_stats2 = pd.DataFrame(X_test_transform2.todense(),
                              columns=cvec2.get_feature_names(),
                              index=y_test2.index)
 df_view_stats2.head()
@@ -3524,8 +3533,8 @@ rf = RandomForestClassifier()
 cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
 ```
 
-#### Use cross-validation in scikit-learn to evaluate the model above. 
-- Evaluate the accuracy of the model, as well as any other metrics you feel are appropriate. 
+#### Use cross-validation in scikit-learn to evaluate the model above.
+- Evaluate the accuracy of the model, as well as any other metrics you feel are appropriate.
 - **Bonus**: Use `GridSearchCV` with `Pipeline` to optimize your `CountVectorizer`/`TfidfVectorizer` and classification model.
 
 
@@ -3626,6 +3635,6 @@ Put your executive summary in a Markdown cell below.
 
     Reclassifying all of Reddit is an incredible daunting task. However, the machine learning and natural language processing abilities of Python can turn this into a manageable task. Reddit calls itself the 'frontpage of the internet,' and indicative of the innovation that drove the creation of the internet, Reddit can innovate to overcome this challenge as it has countless obstacles before this.
 
-    Specifically, the distinction between r/DataScience and r/Statistics is relatively small as these subreddits generally discuss similar ideas and concepts. Despite these similarities, I believe my models performed quite well (especially my first run of Logistic Regression using n-grams = 1). Additionally, I chose to remove specific stop words ('science', 'https', 'com') that would more easily identify r/DataScience as the correct subreddit, in order to 'challenge' my modeling and evaluation skills, as well as allow this process to more generally be applied to all of Reddit's various subreddits. Removing these stop word would have increased my models' classifying ability even further. 
-    
+    Specifically, the distinction between r/DataScience and r/Statistics is relatively small as these subreddits generally discuss similar ideas and concepts. Despite these similarities, I believe my models performed quite well (especially my first run of Logistic Regression using n-grams = 1). Additionally, I chose to remove specific stop words ('science', 'https', 'com') that would more easily identify r/DataScience as the correct subreddit, in order to 'challenge' my modeling and evaluation skills, as well as allow this process to more generally be applied to all of Reddit's various subreddits. Removing these stop word would have increased my models' classifying ability even further.
+
     Finally, I believe that this machine learning/NLP process can be applied to Reddit as a whole to help reclassify and realign it's subreddits with a high degree of success. Coupled with Reddit's strong community, including its committed mods, this is challenge that Reddit can overcome, and potentially be stronger off because of it.

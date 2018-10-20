@@ -2,7 +2,7 @@
 layout: post
 title: "Ames Housing Project"
 date: 2018-09-18
-excerpt: "What factors are most predictive of the price of a house in Ames Iowa?"
+excerpt: "What factors are most predictive of housing prices in Ames Iowa?"
 project: true
 tags: [project, regression, regularization, interaction terms]
 image: "/assets/img/iowa_house.jpg"
