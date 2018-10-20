@@ -11,7 +11,7 @@ tags:
 - blog
 image: "/assets/img/random_forest.jpeg"
 ---
-->**Let's take a random walk down a Random Forest path!**<-
+:**Let's take a random walk down a Random Forest path!**:
 ![Tree]({{"/assets/img/random_forest.jpeg"}})
 
 Scientists have always been looking to explain the world through observations and data. But what has always fascinated me about life, is that randomness, one way or another, will always play its part.
