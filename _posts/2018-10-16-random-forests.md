@@ -32,9 +32,8 @@ Here's an example of a decision tree surrounding the question I hope I'll soon b
 
 $$ \text{Entropy} = -\sum_{i=1}^{classes} p(i\;|\;t) \;log_2( p(i\;|\;t) ) $$
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at convallis erat. Integer ac sapien mollis, aliquet orci sed, bibendum mi. Donec ullamcorper tellus nec nisl vestibulum, eu aliquet nisl aliquam. Donec vitae tempor sapien, ut sagittis diam. Ut tincidunt tortor non blandit ullamcorper. Donec sit amet posuere leo, dictum dignissim tortor. Ut nec sapien quis velit gravida pretium a a nibh. Nunc tempus ligula nec ultricies ullamcorper. Cras lobortis, leo vel efficitur vulputate, nibh tellus fermentum orci, et sodales risus elit sit amet ligula. Nam odio ipsum, faucibus a maximus id, faucibus a odio. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer a pellentesque dui, nec iaculis lorem. In eros lorem, ultrices quis tincidunt id, vulputate a eros. Vestibulum congue ac ex eget scelerisque.
----
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 {% highlight ca65 %}
-stuff
+$$ \text{Entropy} = -\sum_{i=1}^{classes} p(i\;|\;t) \;log_2( p(i\;|\;t) ) $$
 {% endhighlight %}
