@@ -37,7 +37,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
-![Gini]({{"/assets/img/gini.png"}})
+![Gini]({{"/assets/img/gini.png"}}=50x10)
 ![Entropy]({{"/assets/img/entropy.png"}})
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
