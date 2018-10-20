@@ -10,6 +10,7 @@ tags:
 - Libraries
 image: "/assets/img/Python.png"
 ---
+![Python]({{"/assets/img/Python.png"}})
 
 As someone who only recently started to learn Python, I know firsthand how overwhelming it can be to try to learn this particular programming language, even though it's supposedly one of the easier ones to learn! Regardless, understanding the power and overall functionality that Python is capable of delivering can certainly instill a greater sense of purpose behind deciding to learn the language. And to understand Python's full-breadth of capabilities, you have to understand how to use some of its most important libraries!
 
@@ -42,7 +43,7 @@ import pandas as pd
 ```
 
 Here are some important topics to review:
--[Pandas Introduction]('https://pandas.pydata.org/')
+- [Pandas Introduction]('https://pandas.pydata.org/')
 - Series - A singular column with x number of rows and a zero-based index.
 - DataFrames - Two-dimensional labeled data structures. It's the most important, and most used, way to structure data in Python.
 [DataFrames]('https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python')
@@ -72,7 +73,7 @@ import numpy as np
 ```
 
 Here are some important topics to review:
--[Numpy Introduction]('https://docs.scipy.org/doc/numpy-1.15.1/user/quickstart.html')
+- [Numpy Introduction]('https://docs.scipy.org/doc/numpy-1.15.1/user/quickstart.html')
 - Arrays - A data structure that stores values of the same data type (unlike lists, which can store data of any mixed-data types). Probably the most important data structure for scientific computing. The Numpy introduction link above gives a great explanation.
 - Matrices - Can be represented using two-dimensional Numpy arrays, and higher dimensional arrays too as needed.
 - For a walkthrough of both arrays/matrices: [Arrays & Matrices]('http://www.physics.nyu.edu/pine/pymanual/html/chap3/chap3_arrays.html')
@@ -113,4 +114,4 @@ Here are some important topics to review:
 - [Matplotlib Wikipedia]('https://en.wikipedia.org/wiki/Matplotlib')
 - [Pyplot Introduction]('https://matplotlib.org/users/pyplot_tutorial.html')
 
-That's it for now! This should get you started with Python libraries!
+That's it for now! This should get you started with Python libraries! Happy learning!
