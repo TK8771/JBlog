@@ -14,7 +14,7 @@ image: "/assets/img/intro_to_sql.png"
 
 Structured Query Language (aka SQL) is a low-level programming language primarily used for managing and querying data in a structured database.
 
-Specifically, it was built atop the research of Edgar Codd while he was at IBM's San Jose Research Laboratory. Despite this introduction, this post will not delve into the history of relational database management systems (aka RDBMS). However, Mr. Codd's work is the foundation of how database management systems work, and is the essential cornerstone of how *almost* all data is contained and stored in today's technology-driven world. I highly recommend doing some cursory reading on it here: ["the wisdom of the crowd."](https://en.wikipedia.org/wiki/Wisdom_of_the_crowd).
+Specifically, it was built atop the research of Edgar Codd while he was at IBM's San Jose Research Laboratory. Despite this introduction, this post will not delve into the history of relational database management systems (aka RDBMS). However, Mr. Codd's work is the foundation of how database management systems work, and is the essential cornerstone of how *almost* all data is contained and stored in today's technology-driven world. I highly recommend doing some cursory reading on it here: ["Relational database management system"](https://en.wikipedia.org/wiki/Relational_database_management_system).
 
 The main purpose of this post is to breakdown the basics of an SQL statement for learning purposes.
 
@@ -32,7 +32,7 @@ Now notice how each primary key also appears appears on other tables. For exampl
 
 To visualize how these tables can be 'linked' to each other:
 
-![Tables]({{"/assets/img/sql_tables.png"}})
+![Tables]({{"/assets/img/sql_tables.jpg"}})
 
 We'll see this 'linking' concept introduced more fully in the JOIN section.
 
@@ -81,12 +81,12 @@ FROM CUSTOMER
   JOIN SALES on SALES.customer_id = CUSTOMER.customer_id
 WHERE CUSTOMER.customer_id = 3
 ```
-**Note: Notice that I put a TABLE_NAME.COLUMN_NAME before all of my variables.** Even though we're only required to explicitly state what table we're trying to pull from when there's overlap, it is generally best practice to always explicitly state the table you want the data from.
+**Note: Notice that I put a TABLE_NAME.COLUMN_NAME before all of my variables.** Even though we're only required to explicitly state what table we're trying to pull from when there's overlap between column names on separate tables, it is generally best practice to always explicitly state the table you want the data from.
 
 This would give us this result:
 
 ![JoinExample]({{"/assets/img/joins_exp.png"}})
 
-This is the most basic version of a join. There are several different types, depending on the data you're looking to include/exclude. Finally, I'll leave you with a diagram I still use regularly to this day to understand how different joins can work:
+This is the most basic version of a JOIN. There are several different types, depending on the data you're looking to include/exclude. Finally, I'll leave you with a diagram I still use regularly to this day to understand how different joins can work:
 
-![Joins]({{"/assets/img/sql_joins.png"}})
+![Joins]({{"/assets/img/sql_joins.jpg"}})
