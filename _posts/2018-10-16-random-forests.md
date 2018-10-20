@@ -18,22 +18,48 @@ Scientists have always been looking to explain the world through observations an
 
 At least that's what I'd like to think Tim Kam Ho, a computer scientist at IBM Watson, had in mind when she first created Random Forest.
 
-This blog post will cover the basics of the Random Forest model and the concepts that underlie it.
+This post will cover the basics of the Random Forest model and the concepts that underlie it.
 
 ## Decision Trees
 
 A decision tree is a flow-chart-like tree structure, where each internal node represents a test/question on an attribute, each branch represents an outcome of the test/question, and leaf nodes represent different class breakdowns.
 
-Here's an example of a decision tree surrounding the question I hope I'll soon be considering: "Should I accept a new job offer?"
+Here's an example of a decision tree surrounding a question that I hope I'll be soon considering: "Should I accept a new job offer?"
 
 ![Decision Tree]({{"/assets/img/decision_tree.png"}})
 
 ## Explaining Information Gain - Gini and Entropy
 
-$$ \text{Entropy} = -\sum_{i=1}^{classes} p(i\;|\;t) \;log_2( p(i\;|\;t) ) $$
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+![Information Gain]({{"/assets/img/information_gain.png"}})
+![Information Gain Simplified]({{"/assets/img/information_gain_simp.png"}})
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
+![Gini]({{"/assets/img/gini.png"}})
+![Entropy]({{"/assets/img/entropy.png"}})
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+## Bootstrapping
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+![Bootstrap]({{"/assets/img/bootstrap.png"}})
+
+## Ensemble Method & Bagging
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+![Ensemble]({{"/assets/img/ensemble_example.png"}})
+
+## Random Forest
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+![RF_example]({{"/assets/img/rf_simp.png"}})
+
 {% highlight ca65 %}
-$$ \text{Entropy} = -\sum_{i=1}^{classes} p(i\;|\;t) \;log_2( p(i\;|\;t) ) $$
+stuff
 {% endhighlight %}
