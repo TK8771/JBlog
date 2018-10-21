@@ -19,14 +19,14 @@ As a result of information's 'reign,' an individual that is capable of acquiring
 Web scrapping is the activity of collecting structured data from the web for usage on another task or process. For data science purposes, that's usually some type of in-depth data analysis and/or data visualization. The main purpose of this post is to breakdown the basics of web scrapping using Python for pedagogical purposes.
 
 ## Useful Links:
-- ["Intro to Web Scraping"](https://realpython.com/python-web-scraping-practical-introduction/)
-- ["DataCamp - Web Scraping"](https://www.datacamp.com/community/tutorials/web-scraping-using-python)
+- [Intro to Web Scraping](https://realpython.com/python-web-scraping-practical-introduction/)
+- [DataCamp - Web Scraping](https://www.datacamp.com/community/tutorials/web-scraping-using-python)
 
 ## Introduction to Key Python Libraries
 
 To get started with web scraping in Python, there are a few libraries that you'll need to install and import.
 
-**Note: There are additional libraries that will be required to do serious data analysis and visualization, but that are outside the scope of this post.** Please see my other post for more information on: ["Important Python Libraries"](https://tk8771.github.io//Intro-to-Python-Libraries/)
+**Note: There are additional libraries that will be required to do serious data analysis and visualization, but that are outside the scope of this post.** Please see my other post for more information on: [Important Python Libraries](https://tk8771.github.io//Intro-to-Python-Libraries/)
 
 The two most important libraries to highlight are **requests** and **BeautifulSoup**. The requests library will help us actually scrap the data from a website. Whereas BeautifulSoup helps us breakdown the html into workable chunks that we can further extract the data with and drop the html entirely.
 
@@ -45,22 +45,23 @@ from bs4 import BeautifulSoup
 
 ## Additional Libraries of Value
 
-# Regex
 By no means are these next libraries required, but they may be helpful depending on what you're looking to accomplish. Additionally, they may help in certain circumstances where the website you're pulling from doesn't properly format their html (or is just simply messy or combined with redundant data).
+
+### Regex
 
 **Regex** is useful in extracting data from large blocks of text on a very granular level. I should note that regex isn't specific to just web scraping, as you can use it on any text document, nor is it specific to just Python as almost all programming language use a similar syntax.
 
 Useful reading on regex:
-- My personal favorite, as you can get practice in while learning: ["RegexOne"](https://regexone.com/)
-- A great resource to drop your text into and test using regex on: ["Regex101"](https://regex101.com/)
-- ["Regex Tutorial"](https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285)
-- ["Regex Cheat Sheet"](https://www.rexegg.com/regex-quickstart.html)
+- My personal favorite, as you can get practice in while learning: [RegexOne](https://regexone.com/)
+- A great resource to drop your text into and test using regex on: [Regex101](https://regex101.com/)
+- [Regex Tutorial](https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285)
+- [Regex Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)
 
 To install: ```pip install regex``` (add a ! at the beginning if doing it directly in jupyter notebook)
 
 To import: ```Python import regex as re```
 
-# Praw
+### Praw
 If you just so happen to be interested in scrapping Reddit for information, I highly recommend looking in the library **praw**. Praw has built in functionality that turns scrapping Reddit into simple, mostly one-liner code blocks.
 
 To install: ```pip install praw``` (add a ! at the beginning if doing it directly in jupyter notebook)
@@ -68,13 +69,13 @@ To install: ```pip install praw``` (add a ! at the beginning if doing it directl
 To import: ```Python import praw```
 
 Useful reading on praw:
-- ["PRAW"](https://praw.readthedocs.io/en/latest/)
+- [PRAW](https://praw.readthedocs.io/en/latest/)
 
 ## Diving into web scrapping using Requests & BeautifulSoup
 
 After we've installed and imported the necessary libraries, we can finally get started with web scrapping!
 
-In this example, I'm going to be scraping a sports website for NHL player salary information. This is the site I'll be using: https://www.spotrac.com/. More specifically, the url will be (capitalized means the variable is dynamic): https://www.spotrac.com/nhl/rankings/YEAR/cap-hit/TEAM_NAME
+In this example, I'm going to be scraping a sports website for NHL player salary information. This is the site I'll be using: [](https://www.spotrac.com/). More specifically, the url will be (capitalized means the variable is dynamic): [](https://www.spotrac.com/nhl/rankings/YEAR/cap-hit/TEAM_NAME)
 
 First step is to set our URL, and use the .get function found in the requests library to pull the actual html.
 
@@ -88,7 +89,7 @@ Then we'll use BeautifulSoup to breakdown the resultant text data. I instantiate
 ```python
 soup = BeautifulSoup(res.content, 'lxml')
 ```
-From there, we have to dig into the html on the actual website to understand how the data is actually stored. To do this, in a web browser, right-click on the piece of data you want, and click "Inspect" (the wording may be different depending on your browser). It'll look like this:
+From there, we have to dig into the html on the actual website to understand how the data is actually stored. To do this, in a web browser, right-click on the piece of data you want, and click "Inspect" (the wording may be different depending on your browser). It'll look like this (far bottom-right):
 
 ![html]({{"/assets/img/html_breakdown.png"}})
 
@@ -151,7 +152,7 @@ for team in teams:
 
 I wanted to also include a loop that I used to scrape Reddit posts (without praw though) from the subreddit Data Science. This is to again show how we can loop through multiple pages to extract tons of data at once.
 
-Note that I use an additional library known as **time** to cause the loop to sleep (or wait) for 3 seconds in between loops, so as not to be stopped by Reddit's request limit. Be sure to check the website you're scraping usage terms - they may restrict how much information you can request from their website at any one time.
+Note that I use an additional Python library known as **time** to cause the loop to sleep (or wait) for 3 seconds in between loops, so as not to be stopped by Reddit's request limit. Be sure to check the website you're scraping usage terms - they may restrict how much information you can request from their website at any one time.
 
 ```python
 # For DS set - previously ran to generate CSV
