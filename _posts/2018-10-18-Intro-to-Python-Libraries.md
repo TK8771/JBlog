@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "An Introduction to Important Python Libraries"
-date: 2018-10-20
+date: 2018-10-18
 excerpt: "A walkthrough of beginner-level Python Libraries."
 tags:
 - Python
@@ -45,8 +45,7 @@ import pandas as pd
 Here are some important topics to review:
 - [Pandas Introduction]('https://pandas.pydata.org/')
 - Series - A singular column with x number of rows and a zero-based index.
-- DataFrames - Two-dimensional labeled data structures. It's the most important, and most used, way to structure data in Python.
-[DataFrames]('https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python')
+- DataFrames - Two-dimensional labeled data structures. It's the most important, and most used, way to structure data in Python: [DataFrames]('https://www.datacamp.com/community/tutorials/pandas-tutorial-dataframe-python')
 
 ## Numpy
 
