@@ -18,7 +18,7 @@ As a result of information's 'reign,' an individual that is capable of acquiring
 
 Web scrapping is the activity of collecting structured data from the web for usage on another task or process. For data science purposes, that's usually some type of in-depth data analysis and/or data visualization. The main purpose of this post is to breakdown the basics of web scrapping using Python for pedagogical purposes.
 
-## Useful Links:
+### Useful Links:
 - [Intro to Web Scraping](https://realpython.com/python-web-scraping-practical-introduction/)
 - [DataCamp - Web Scraping](https://www.datacamp.com/community/tutorials/web-scraping-using-python)
 
