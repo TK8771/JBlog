@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Python's Print & Format Function"
+title: "Python's Print & Format Functions"
 date: 2018-10-20
-excerpt: "A walkthrough of Python's Print & Format function."
+excerpt: "A walkthrough of Python's Print & Format functions."
 tags:
 - python
 - code along
