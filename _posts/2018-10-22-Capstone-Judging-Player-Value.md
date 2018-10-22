@@ -2,7 +2,7 @@
 layout: post
 title: "Capstone: Gauging NHL Player Value"
 date: 2018-10-20
-excerpt: "Capstone: Gauging NHL Player Valu"
+excerpt: "Capstone: Gauging NHL Player Value"
 tags:
 - Capstone
 - NHL
